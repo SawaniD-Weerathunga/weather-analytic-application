@@ -35,7 +35,6 @@ A secure full-stack weather analytics application built with **Python (FastAPI)*
 - Dark mode / light mode toggle
 - Frontend sorting and filtering
 - Comfort score chart
-- Unit tests for the Comfort Index function
 
 ---
 
