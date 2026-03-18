@@ -1,0 +1,250 @@
+pages: 5
+
+--- PAGE 1 ---
+Fidenz  –  Assignment  (Full  Stack)  
+Objective  
+Develop  a  secure  weather  analytics  application  that  retrieves  weather  data,  processes  it  using  a  
+custom
+ 
+metric
+ 
+you
+ 
+design
+,
+ 
+and
+ 
+presents
+ 
+meaningful
+ 
+insights.
+ 
+ 
+Your
+ 
+solution
+ 
+must
+ 
+include:
+ 
+1.  Weather  data  retrieval  2.  Data  processing  using  a  custom  Comfort  Index  (designed  by  you)  3.  Responsive  UI  4.  Caching  5.  Authentication  and  Authorization  (Auth0)  
+Part  1  —  Weather  Analytics  Application  (6  Hours)  
+This  part  tests  your  problem-solving,  data  processing,  and  UI  implementation  skills .  
+Task  Overview  
+Build  a  web/API  application  that  does  the  following:  
+1.  Reads  city  codes  from  cities.json 2.  Fetches  weather  data  from  OpenWeatherMap  a.  Register  on  OpenWeatherMap to  obtain  an  API  key  b.  Use  the  CityCode  values  to  fetch  weather  data  from  OpenWeatherMap’s  API:   3.  Computes  a  Comfort  Index  Score  for  each  city  (formula  defined  by  you)  4.  Displays  weather  +  score  +  ranking  5.  Provides  server-side  caching  6.  Supports  desktop  +  mobile  layouts  
+ 
+Design  Your  Own  Comfort  Index  Algorithm  
+You  must  create  a  custom  “Comfort  Index  Score”  using  at  least  three  parameters ,  such  as:  
+●  Temperature  ●  Humidity  ●  Wind  Speed  
+
+--- PAGE 2 ---
+●  Cloudiness  ●  Pressure  ●  Visibility  ●  Dew  Point  (Not  directly  available  in  response)  
+Rules:  
+1.  Your  comfort  score  must  be  a  numerical  value  from  0  to  100 .  2.  You  must  include  a  short  explanation  why  you  chose  your  formula ,  placed  inside  your  
+README.
+ 3.  The  backend  must  compute  this  score,  not  the  frontend.  4.  Cities  must  be  ranked  from  “Most  Comfortable”  to  “Least  Comfortable.”  
+Detailed  Steps  —  Part  1  
+Step  1:  Extract  City  Codes  
+●  Download  and  parse  cities.json.  ●  Extract  CityCode values  into  an  array.  ●  Minimum  10  cities  must  be  processed.  
+Step  2:  Fetch  Weather  Data  
+Use  OpenWeatherMap’s  API:  
+GET   
+https://api.openweathermap.org/data/2.5/weather?id={city  
+id}&appid={API
+ 
+key}
+ 
+ 
+Example:  
+https://api.openweathermap.org/data/2.5/weather?id=2172797&appid=439d  
+4b804b
+ 
+c8187953eb36d2a8c26a02
+ 
+ 
+Sample  Response  
+{"coord":{"lon":145.7667,"lat":-16.9167},"weather":[{"id":804,"main":"
+Clouds","description":"overcast
+ 
+clouds","icon":"04n"}],"base":"stations","main":{"temp":299.12,"feels_
+like":299.12,"temp_min":299.12,"temp_max":299.12,"pressure":1012,"humi
+dity":73,"sea_level":1012,"grnd_level":992},"visibility":10000,"wind":
+{"speed":2.57,"deg":180},"clouds":{"all":100},"dt":1763642260,"sys":{"
+
+--- PAGE 3 ---
+type":1,"id":9490,"country":"AU","sunrise":1763580841,"sunset":1763627
+476},"timezone":36000,"id":2172797,"name":"Cairns","cod":200}
+ 
+Step  3:  Compute  the  Comfort  Index  Score  
+You  must:  
+●  Define  your  formula  ●  Explain  your  reasoning  in  the  README  ●  Apply  the  formula  to  each  city  ●  Produce  a  score  from  0  to  100  ●  Produce  a  sorted  list  of  cities  based  on  the  score  
+ 
+Step  4:  Display  Weather  Information  
+For  each  city,  display:  
+●  City  Name  ●  Weather  Description  ●  Temperature  ●  Your  Comfort  Score  ●  Rank  Position  
+Step  5:  Implement  Server-Side  Caching  
+●  Cache  raw  weather  API  responses  for  5  minutes  ●  Cache  the  processed  output  separately  (optional  but  preferred)  ●  Include  a  debug  endpoint  to  show  cache  status  (HIT  /  MISS)  
+Step  6:  Responsive  UI  
+●  Must  support  both  mobile  and  desktop  
+ 
+ 
+
+--- PAGE 4 ---
+Part  2  —  Authentication  &  Authorization  (3  Hours)  
+Step  1:  Implement  Authentication  (Auth0)  
+●  Only  authenticated  users  can  access  Comfort  Index  dashboard  ●  Implement  login/logout  flow  
+Step  2:  Multi-Factor  Authentication  
+●  Enable  MFA  via  email  verification  
+Step  3:  Restrict  Signups  
+●  Disable  public  signups  ●  Only  whitelisted  users  can  log  in  ●  Create  a  test  user:  
+ ○  Email:  careers@fidenz.com  ○  Password:  Pass#fidenz 
+Additional  Requirements  
+Technology  
+You  may  use  any  stack  (React,  Vue,  Angular,  Node,  .NET,  Python,  etc.)  
+Repository  
+●  Push  to  GitHub  or  GitLab  ●  Grant  access  to:  
+ ○  kanishka.d@fidenz.com  ○  srimal.w@fidenz.com ○  narada.a@fidenz.com ○  amindu.l@fidenz.com ○  niroshanan.s@fidenz.com  
+ 
+
+--- PAGE 5 ---
+Documentation  
+Your  README  must  include:  
+1.  Setup  instructions  2.  Explanation  of  your  Comfort  Index  formula  3.  Reasoning  behind  variable  weights  4.  Trade-offs  you  considered  5.  Cache  design  explanation  6.  Any  known  limitations  
+Bonus  (Not  mandatory  but  rewarded)  
+●  Dark  mode  ●  Unit  tests  for  the  Comfort  Index  function  ●  Sorting/filtering  on  frontend  ●  Graphs  (temperature  trend  per  city)  
+Technologies  &  References  
+To  complete  this  assignment,  you  may  use  any  relevant  technologies  and  libraries.  
+Below
+ 
+are
+ 
+ 
+Useful  references:  
+Core  Concepts   
+●  HTTP,  Sessions,  Authentication  &  Authorization   ●  Auth0  Authentication  (Docs)  ●  JWT  Tokens,  Single  Sign-On  (SSO),  Multi-Factor  Authentication  (MFA)    ○  OpenID  Connect  Flows  ○  JWT  Introduction  ○  Single  Sign-On  (SSO)   ○  Auth0  MFA 
+*All  code  must  be  authored  by  you,  and  you  are  expected  to  have  a  deep  understanding  
+of
+ 
+both
+ 
+your
+ 
+implementation
+ 
+and
+ 
+the
+ 
+underlying
+ 
+concepts.
+ 
+By
+ 
+the
+ 
+end
+ 
+of
+ 
+the
+ 
+assignment,
+ 
+you
+ 
+should
+ 
+be
+ 
+fully
+ 
+able
+ 
+to
+ 
+explain
+ 
+your
+ 
+design
+ 
+decisions,
+ 
+discuss
+ 
+the
+ 
+technologies
+ 
+involved,
+ 
+and
+ 
+reason
+ 
+about
+ 
+the
+ 
+architecture.
+ 
+If
+ 
+your
+ 
+assignment
+ 
+is
+ 
+selected,
+ 
+the
+ 
+evaluation
+ 
+interview
+ 
+will
+ 
+include
+ 
+an
+ 
+in-depth
+ 
+discussion
+ 
+of
+ 
+your
+ 
+solution
+ 
+as
+ 
+well
+ 
+as
+ 
+a
+ 
+live
+ 
+code
+ 
+modification
+ 
+to
+ 
+verify
+ 
+your
+ 
+understanding.
+ 
+
