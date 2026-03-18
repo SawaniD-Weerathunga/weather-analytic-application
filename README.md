@@ -436,15 +436,6 @@ The assignment requires:
 * the login user is created manually in Auth0
 * only manually provisioned users can access the dashboard
 
-### Assignment test user
-
-Required test user credentials from the assignment:
-
-```text
-Email: careers@fidenz.com
-Password: Pass#fidenz
-```
-
 ---
 
 ## Responsive UI
