@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Analytics Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Weather Analytics Dashboard</h1>
+    <div class="actions">
+      <button id="loginBtn">Login</button>
+      <button id="logoutBtn" class="hidden">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="welcomeSection" class="card">
+      <h2>Welcome</h2>
+      <p>Please log in to view the Comfort Index dashboard.</p>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <div class="card">
+        <h2>Ranked Cities</h2>
+        <p id="cacheInfo">Cache: -</p>
+        <div id="cityGrid" class="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
