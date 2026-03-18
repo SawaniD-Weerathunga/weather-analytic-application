@@ -19,6 +19,7 @@
     </div>
 
     <div class="topbar-actions">
+      <button id="themeToggleBtn" class="btn btn-outline">Light Mode</button>
       <button id="loginBtn" class="btn btn-primary">Sign In</button>
       <button id="logoutBtn" class="btn btn-outline hidden">Logout</button>
     </div>
@@ -45,7 +46,6 @@
             Only authorized users can access the dashboard.
           </div>
         </div>
-
       </div>
     </section>
 
@@ -79,6 +79,21 @@
         </div>
       </div>
 
+      <div class="dashboard-controls">
+        <input type="text" id="searchInput" placeholder="Search city name..." />
+        <select id="sortSelect">
+          <option value="rank">Sort by Rank</option>
+          <option value="score">Sort by Comfort Score</option>
+          <option value="temperature">Sort by Temperature</option>
+          <option value="name">Sort by City Name</option>
+        </select>
+      </div>
+
+      <div class="chart-card">
+        <h3>Comfort Score by City</h3>
+        <canvas id="comfortChart"></canvas>
+      </div>
+
       <div class="table-wrapper">
         <table class="weather-table">
           <thead>
@@ -99,6 +114,7 @@
   </main>
 
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.1/auth0-spa-js.production.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="/static/app.js"></script>
 </body>
 </html>

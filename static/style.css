@@ -18,8 +18,19 @@
   --radius: 18px;
 }
 
-* {
-  box-sizing: border-box;
+body.light-mode {
+  --bg: #f8fafc;
+  --bg-soft: #e2e8f0;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-solid: #ffffff;
+  --text: #0f172a;
+  --text-light: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #cbd5e1;
+  --border: rgba(15, 23, 42, 0.08);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
 
 body {
@@ -30,6 +41,10 @@ body {
   color: var(--text-light);
   position: relative;
   overflow-x: hidden;
+}
+
+body.light-mode {
+  background: linear-gradient(135deg, #f8fafc, #dbeafe, #bfdbfe);
 }
 
 .page-bg {
@@ -84,6 +99,14 @@ body {
   font-size: 14px;
 }
 
+body.light-mode .brand p,
+body.light-mode .hero-left p,
+body.light-mode .hero-note,
+body.light-mode .dashboard-header p,
+body.light-mode .meta-label {
+  color: #334155;
+}
+
 .topbar-actions {
   display: flex;
   gap: 12px;
@@ -112,6 +135,13 @@ body {
   padding: 48px 32px;
   box-shadow: var(--shadow);
   min-height: 480px;
+}
+
+body.light-mode .hero-card,
+body.light-mode .summary-card,
+body.light-mode .meta-box {
+  background: rgba(255, 255, 255, 0.75);
+  color: #0f172a;
 }
 
 .hero-left {
@@ -210,6 +240,12 @@ body {
   color: white;
 }
 
+body.light-mode .meta-value,
+body.light-mode .summary-value,
+body.light-mode .dashboard-header h2 {
+  color: #0f172a;
+}
+
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(220px, 1fr));
@@ -236,6 +272,52 @@ body {
   font-size: 24px;
   font-weight: 700;
   color: white;
+}
+
+.dashboard-controls {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.dashboard-controls input,
+.dashboard-controls select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  min-width: 220px;
+  outline: none;
+}
+
+.dashboard-controls input::placeholder {
+  color: #cbd5e1;
+}
+
+.dashboard-controls select option {
+  color: #0f172a;
+}
+
+body.light-mode .dashboard-controls input,
+body.light-mode .dashboard-controls select {
+  background: white;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  color: #0f172a;
+}
+
+.chart-card h3 {
+  margin-top: 0;
 }
 
 .table-wrapper {
@@ -339,6 +421,11 @@ body {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.35);
   color: white;
+}
+
+body.light-mode .btn-outline {
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  color: #0f172a;
 }
 
 .btn-secondary {
