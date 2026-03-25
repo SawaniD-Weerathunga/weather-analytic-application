@@ -262,7 +262,7 @@ Cloudiness influences sun exposure and visual weather comfort, but it usually af
 
 The goal was to create a formula that is:
 
-* simple to explain
+* simple to calculate
 * realistic enough for the assignment
 * easy to maintain
 * computed consistently across different cities
